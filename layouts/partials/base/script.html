@@ -1,0 +1,13 @@
+<!-- umami -->
+<script async defer data-website-id="85a9edfb-5859-4f66-8a28-f7f8548a80b3" src="https://umami.laomai.org/laomai.js"></script>
+
+<!-- Mathjax -->
+{{- if and (or .Params.mathjax (and .Site.Params.mathjax (ne .Params.mathjax false))) (or .IsPage .IsHome) }}
+<script src="/js/load-mathjax.js" defer></script>
+<style>
+    mjx-math {
+        font-size: 1.25rem;
+    }
+</style>
+{{- end }}
+<!-- End -->

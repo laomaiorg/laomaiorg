@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../newlm-postcss"
+		}
+	],
+	"settings": {
+		"explorer.fileNesting.enabled": true,
+		"files.exclude": {
+			".vscode": true,
+			"resources": true
+		},
+		"editor.tabSize": 2
+	}
+}

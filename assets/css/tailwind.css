@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Hubot;
+  font-display: swap;
+  src: url('https://cdn.qylao.com/font/Hubot-Sans-Bold.woff2') format('woff2'),
+      url('https://cdn.qylao.com/font/Hubot-Sans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: MonteCarlo;
+  font-display: swap;
+  src: url('https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff2') format('woff2'),
+      url('https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff') format('woff');
+  unicode-range: U+2D, U+30-39, U+4C, U+4D, U+61, U+69, U+6F, U+A9;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

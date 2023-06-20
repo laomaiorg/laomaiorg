@@ -1,0 +1,123 @@
+{{ define "main" }}
+<div id="home">
+  <div class="title mt-12 text-5xl font-bold font-Hubot md:mt-16">
+    <span class="block">Hello,</span>
+    <span class="block mt-2">I'm LaoMai.</span>
+  </div>
+  <div class="mt-4 font-serif opacity-80 md:mt-6">
+    <p class="mt-2">Amateur developer.</p>
+    <p class="mt-2">Currently working from home and living in Qingyuan.</p>
+    <p class="mt-2">Likes front-end development and digital products.</p>
+  </div>
+  <div class="icons pt-2 flex flex-wrap gap-3">
+    <a href="/archives/">
+      <icon class="inline-block">
+        {{ $reacthookform := dict
+          "vendor" "simple-icons"
+          "name" "reacthookform"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $reacthookform }}<span class="inline-block align-middle ml-1">Blog</span>
+      </icon>
+    </a>
+    <a href="/links/">
+      <icon class="inline-block">
+        {{ $chainlink := dict
+          "vendor" "simple-icons"
+          "name" "chainlink"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $chainlink }}<span class="inline-block align-middle ml-1">Links</span>
+      </icon>
+    </a>
+    <a href="https://github.com/laomaiorg">
+      <icon class="inline-block">
+        {{ $github := dict
+          "vendor" "simple-icons"
+          "name" "github"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $github }}<span class="inline-block align-middle ml-1">Github</span>
+      </icon>
+    </a>
+    <a href="https://twitter.com/laomaiorg">
+      <icon class="inline-block">
+        {{ $twitter := dict
+          "vendor" "simple-icons"
+          "name" "twitter"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $twitter }}<span class="inline-block align-middle ml-1">Twitter</span>
+      </icon>
+    </a>
+    <a href="https://www.youtube.com/@laomaiorg">
+      <icon class="inline-block">
+        {{ $youtube := dict
+          "vendor" "simple-icons"
+          "name" "youtube"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $youtube }}<span class="inline-block align-middle ml-1">YouTube</span>
+      </icon>
+    </a>
+    <a href="https://www.instagram.com/laomaiorg/">
+      <icon class="inline-block">
+        {{ $instagram := dict
+          "vendor" "simple-icons"
+          "name" "instagram"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $instagram }}<span class="inline-block align-middle ml-1">Instagram</span>
+      </icon>
+    </a>
+    <a href="https://weibo.com/u/76386">
+      <icon class="inline-block">
+        {{ $sinaweibo := dict
+          "vendor" "simple-icons"
+          "name" "sinaweibo"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $sinaweibo }}<span class="inline-block align-middle ml-1">微博</span>
+      </icon>
+    </a>
+    <a href="https://space.bilibili.com/214467076">
+      <icon class="inline-block">
+        {{ $bilibili := dict
+          "vendor" "simple-icons"
+          "name" "bilibili"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $bilibili }}<span class="inline-block align-middle ml-1">哔哩哔哩</span>
+      </icon>
+    </a>
+  </div>
+  <hr class="mx-auto my-10 w-1/4 border-stone-200 dark:border-stone-800 md:w-1/2">
+  <div class="pb-8">
+    <h2 class="flex justify-between pb-4">
+      <span class="inline-block align-middle font-Hubot font-bold text-3xl">
+        Latest Posts
+      </span>
+      <icon class="inline-block">
+        {{ $monkeytie := dict
+          "vendor" "simple-icons"
+          "name" "monkeytie"
+          "className" "inline-block align-middle w-7 h-7 m-1 opacity-20"
+        }}
+        {{ partial "icons/icon" $monkeytie }}
+      </icon>
+    </h2>
+    <ul class="latestPosts">
+      {{ range first 5 (where site.RegularPages "Type" "in" "post") }}
+      <li>
+        <a class="!pb-2 md:!pb-4 flex gap-1 flex-col md:flex-row opacity-90 md:gap-2 hover:text-stone-900 dark:text-stone-100 hover:opacity-100 duration-300" href="{{ .RelPermalink }}">
+          <p>{{ .Title }}</p>
+          <p class="text-stone-400 m-0">
+            <span>{{ .Date.Format "Jan 2" }} · ≈{{ .ReadingTime }}min</span>
+          </p>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

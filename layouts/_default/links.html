@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="my-20 m-auto">
+  <h1 class="hidden">{{ .Title }}</h1>
+
+  <div class="links-list flex flex-wrap gap-4">
+    {{ $siteResources := resources }} {{ range $i, $link := $.Site.Data.links }}
+    <div class="w-full lsm:w-[calc(50%-16px)] sm:w-[calc(33.3333%-32px)] h-12 border rounded hover:bg-stone-200 hover:border-stone-700 dark:hover:bg-stone-800 dark:hover:border-stone-300 duration-500">
+      <a class="flex justify-center" href="{{ $link.website }}?from=laomai.org" target="_blank" rel="noopener external">
+        <span class="inline-block leading-[3rem]"> {{- $link.title -}} </span>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

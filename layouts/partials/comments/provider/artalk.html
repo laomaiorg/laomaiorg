@@ -1,0 +1,24 @@
+<!-- CSS -->
+<style>
+    .atk-dark-mode {
+        --at-color-bg: rgb(107 114 128) !important;
+        --at-color-border: rgb(107 114 128) !important;
+    }
+</style>
+<link href="/js/artalk/Artalk.css" rel="preload stylesheet" as="style" />
+
+<!-- JS -->
+<script src="/js/artalk/Artalk.js"></script>
+
+<!-- Artalk -->
+<div id="Comments"></div>
+<script>
+    new Artalk({
+        el: '#Comments',
+        pageKey: '',
+        pageTitle: '{{ .Title }}',
+        server: '{{ $.Site.Params.comments.artalk.server }}',
+        site: '{{ $.Site.Params.comments.artalk.site }}',
+    });
+</script>
+

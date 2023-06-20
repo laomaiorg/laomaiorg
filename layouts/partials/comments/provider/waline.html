@@ -1,0 +1,50 @@
+<script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<!-- 样式文件 -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
+<div id="waline" class="waline-container"></div>
+<style>
+    :root {
+        --waline-font-size: 1rem;
+        --waline-theme-color: rgba(0,0,0,0.7);
+        --waline-active-color: #202020;
+        --waline-badge-color: rgba(0,0,0,0.9);
+    }
+    .wl-power {
+        display: none;
+    }
+    .wl-emoji {
+        width: 1rem;
+    }
+    .wl-card .wl-badge {
+        display: inline-block;
+        margin-right: 1em;
+        padding: 0;
+        border: 0px solid var(--waline-badge-color);
+        border-radius: 0px;
+        color: var(--waline-badge-color);
+        font-size: var(--waline-badge-font-size);
+    }
+</style>
+
+{{- with .Site.Params.comments.waline -}}
+{{- $config := dict "el" "#waline" "dark" `html[data-scheme="dark"]` -}}
+{{- $replaceKeys := dict "serverurl" "serverURL" "requiredmeta" "requiredMeta" "wordlimit" "wordLimit" "pagesize" "pageSize" "avatarcdn" "avatarCDN" "avatarforce" "avatarForce" -}}
+
+{{- range $key, $val := . -}}
+    {{- if $val -}}  
+        {{- $replaceKey := index $replaceKeys $key -}}
+        {{- $k := default $key $replaceKey -}}
+
+        {{- $config = merge $config (dict $k $val) -}}
+    {{- end -}}
+{{- end -}}
+
+
+<script>
+    /// Waline client configuration see: https://waline.js.org/en/reference/client.html
+    Waline.init({{ $config | jsonify | safeJS }});
+</script>
+{{- end -}}

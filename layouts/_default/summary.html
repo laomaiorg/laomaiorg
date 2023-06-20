@@ -1,0 +1,17 @@
+{{ $diary := .File.Dir | replaceRE "(.*)/" "$1"}} {{ if eq $diary "diary"}}
+<article class="diary overflow-hidden my-10 m-auto">
+  <time>{{ .Date.Format "2006-01-02" }}</time>
+
+  <div class="article-content">{{ .Content }}</div>
+</article>
+{{ else }}
+<article class="overflow-hidden my-10 m-auto">
+
+    <a href="{{ .RelPermalink }}"><h2 class=" inline text-2xl font-semibold pt-4 py-1 border-b border-b-transparent hover:border-b-stone-700 dark:hover:border-b-stone-300 duration-1000">{{ .Title }}</h2></a>
+
+  <time class="block py-2 opacity-60">{{ .Date.Format "January 02, 2006" }} · ≈{{ .ReadingTime }}min</time>
+
+  <div class="summary">{{ .Summary }}</div>
+</article>
+
+{{ end }} {{ partial "base/pagination" . }}

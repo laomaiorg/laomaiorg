@@ -1,0 +1,14 @@
+{{ $pag := .Paginator }} {{ if $pag }} {{ if gt $pag.TotalPages 1}}
+<ul class="flex flex-col gap-2 font-mono">
+  {{ if $pag.HasPrev }}
+  <a href="{{ $pag.Prev.URL }}">
+    <span>> Prev ..</span>
+  </a>
+  {{ end }} {{ if $pag.HasNext }}
+  <a href="{{ $pag.Next.URL }}">
+    <span>> Next ..</span>
+  </a>
+  {{ end }}
+  <a href="/" title="Retum Home"><span>> cd ..</span></a>
+</ul>
+{{ end }} {{ end }}

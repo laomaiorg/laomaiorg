@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="prose dark:prose-invert overflow-hidden my-20 m-auto">
+  <h1 class="hidden">{{ .Title }}</h1>
+  <div class="article-content">{{ .Content }}</div>
+</article>
+
+<script>
+	// 获取包含内容的div元素
+const contentDiv = document.querySelector('.article-content');
+
+if (contentDiv) {
+    // 获取所有p标签元素
+    const paragraphs = contentDiv.querySelectorAll('p');
+    
+    paragraphs.forEach(p => {
+        const links = p.querySelectorAll('a[href$=".md"]');
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            const title = link.textContent;
+            const newHref = href.replace('.md', '').toLowerCase().replace(/%20/g, '-');
+            const newLinkHtml = `<a href="/tags/${newHref}" title="查看与「${title}」相关的内容">${title}</a>`;
+            
+            p.innerHTML = p.innerHTML.replace(link.outerHTML, newLinkHtml);
+        });
+    }); 
+}
+</script>
+{{ end }}

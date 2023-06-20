@@ -1,0 +1,8 @@
+public/
+node_modules/
+.vscode/
+.prettierrc
+@eaDir/
+.DS_Store
+resources/
+.git/
