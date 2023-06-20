@@ -28,3 +28,24 @@ path {
     border-bottom: 1px solid $hovec;
   }
 }
+
+/* 代码块 */
+.highlight {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 0.625rem;
+  background: #282a36;
+}
+.highlight::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-image: radial-gradient(
+      circle 344px at 1.4% 0%,
+      rgba(242, 185, 252, 1) 19.3%,
+      rgba(250, 254, 190, 1) 80.7%
+  );
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
+
+.highlight::-webkit-scrollbar {
+  height: 5px;
+}
