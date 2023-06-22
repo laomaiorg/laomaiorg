@@ -23,15 +23,15 @@
     </a>
     <a href="/links/">
       <icon class="inline-block">
-        {{ $chainlink := dict
-          "vendor" "simple-icons"
-          "name" "chainlink"
+        {{ $link := dict
+          "vendor" "bs"
+          "name" "link-45deg"
           "className" "inline-block align-middle"
         }}
-        {{ partial "icons/icon" $chainlink }}<span class="inline-block align-middle ml-1">Links</span>
+        {{ partial "icons/icon" $link }}<span class="inline-block align-middle ml-1">Links</span>
       </icon>
     </a>
-    <a href="https://github.com/laomaiorg">
+    <a href="https://github.com/laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $github := dict
           "vendor" "simple-icons"
@@ -41,7 +41,7 @@
         {{ partial "icons/icon" $github }}<span class="inline-block align-middle ml-1">Github</span>
       </icon>
     </a>
-    <a href="https://twitter.com/laomaiorg">
+    <a href="https://twitter.com/laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $twitter := dict
           "vendor" "simple-icons"
@@ -51,7 +51,7 @@
         {{ partial "icons/icon" $twitter }}<span class="inline-block align-middle ml-1">Twitter</span>
       </icon>
     </a>
-    <a href="https://www.youtube.com/@laomaiorg">
+    <a href="https://www.youtube.com/@laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $youtube := dict
           "vendor" "simple-icons"
@@ -61,7 +61,7 @@
         {{ partial "icons/icon" $youtube }}<span class="inline-block align-middle ml-1">YouTube</span>
       </icon>
     </a>
-    <a href="https://www.instagram.com/laomaiorg/">
+    <a href="https://www.instagram.com/laomaiorg/" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $instagram := dict
           "vendor" "simple-icons"
@@ -71,7 +71,7 @@
         {{ partial "icons/icon" $instagram }}<span class="inline-block align-middle ml-1">Instagram</span>
       </icon>
     </a>
-    <a href="https://weibo.com/u/76386">
+    <a href="https://weibo.com/u/76386" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $sinaweibo := dict
           "vendor" "simple-icons"
@@ -81,7 +81,7 @@
         {{ partial "icons/icon" $sinaweibo }}<span class="inline-block align-middle ml-1">微博</span>
       </icon>
     </a>
-    <a href="https://space.bilibili.com/214467076">
+    <a href="https://space.bilibili.com/214467076" target="_blank" rel="noopener noreferrer nofollow">
       <icon class="inline-block">
         {{ $bilibili := dict
           "vendor" "simple-icons"
@@ -89,6 +89,36 @@
           "className" "inline-block align-middle"
         }}
         {{ partial "icons/icon" $bilibili }}<span class="inline-block align-middle ml-1">哔哩哔哩</span>
+      </icon>
+    </a>
+    <a href="/index.xml">
+      <icon class="inline-block">
+        {{ $rss := dict
+          "vendor" "simple-icons"
+          "name" "rss"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $rss }}<span class="inline-block align-middle ml-1">RSS订阅</span>
+      </icon>
+    </a>
+    <a href="https://www.foreverblog.cn/go.html" target="_blank" title="穿梭虫洞-随机访问十年之约友链博客" rel="external nofollow ug noopener noreferrer">
+      <icon class="inline-block">
+        {{ $wormhole := dict
+          "vendor" "bs"
+          "name" "arrow-left-right"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $wormhole }}<span class="inline-block align-middle ml-1">穿梭虫洞</span>
+      </icon>
+    </a>
+    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="external nofollow ug noopener noreferrer">
+      <icon class="inline-block">
+        {{ $upyun := dict
+          "vendor" "bs"
+          "name" "cloud"
+          "className" "inline-block align-middle"
+        }}
+        {{ partial "icons/icon" $upyun }}<span class="inline-block align-middle ml-1">又拍云<span class="opacity-20">提供加速服务</span></span>
       </icon>
     </a>
   </div>

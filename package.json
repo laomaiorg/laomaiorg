@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:css": "NODE_ENV=development npx tailwindcss -i assets/css/tailwind.css -o static/css/style.css --watch",
-    "dev:hugo": "hugo server --gc",
+    "dev:hugo": "hugo server",
     "dev:open": "open http://localhost:1313/",
     "build": "npm-run-all build:*",
     "build:css": "NODE_ENV=production npx postcss assets/css/tailwind.css -o static/css/style.min.css",

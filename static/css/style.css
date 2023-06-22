@@ -3,8 +3,8 @@
 
   font-display: swap;
 
-  src: url('/font/Hubot-Sans-Bold.woff2') format('woff2'),
-      url('/font/Hubot-Sans-Bold.woff') format('woff');
+  src: url('https://cdn.qylao.com/font/Hubot-Sans-Bold.woff2') format('woff2'),
+      url('https://cdn.qylao.com/font/Hubot-Sans-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -12,8 +12,8 @@
 
   font-display: swap;
 
-  src: url('/font/MonteCarlo-Regular-subset.woff2') format('woff2'),
-      url('/font/MonteCarlo-Regular-subset.woff') format('woff');
+  src: url('https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff2') format('woff2'),
+      url('https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff') format('woff');
 
   unicode-range: U+2D, U+30-39, U+4C, U+4D, U+61, U+69, U+6F, U+A9;
 }
@@ -1059,16 +1059,16 @@ video {
   margin-left: 0.25rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .block {
@@ -1167,10 +1167,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1229,6 +1225,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1254,11 +1255,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1279,6 +1275,14 @@ video {
   padding-top: 2rem;
 }
 
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
@@ -1289,14 +1293,6 @@ video {
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pr-8 {
-  padding-right: 2rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
 }
 
 .text-center {
@@ -1319,12 +1315,12 @@ video {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-.font-MonteCarlo {
-  font-family: MonteCarlo;
-}
-
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-MonteCarlo {
+  font-family: MonteCarlo;
 }
 
 .text-9xl {
@@ -1388,24 +1384,8 @@ video {
   color: rgb(68 64 60 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
-.decoration-dotted {
-  text-decoration-style: dotted;
-}
-
-.decoration-dashed {
-  text-decoration-style: dashed;
-}
-
 .underline-offset-2 {
   text-underline-offset: 2px;
-}
-
-.underline-offset-4 {
-  text-underline-offset: 4px;
 }
 
 .opacity-80 {
@@ -1416,8 +1396,8 @@ video {
   opacity: 0.2;
 }
 
-.opacity-70 {
-  opacity: 0.7;
+.opacity-90 {
+  opacity: 0.9;
 }
 
 .opacity-60 {
@@ -1432,8 +1412,8 @@ video {
   opacity: 0.4;
 }
 
-.opacity-90 {
-  opacity: 0.9;
+.opacity-10 {
+  opacity: 0.1;
 }
 
 .transition-transform {
