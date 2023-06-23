@@ -1223,6 +1223,10 @@ video {
   background-color: rgb(245 245 244 / var(--tw-bg-opacity));
 }
 
+.fill-stone-700 {
+  fill: #44403c;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1532,6 +1536,10 @@ video {
 .dark .dark\:bg-stone-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(28 25 23 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:fill-stone-50 {
+  fill: #fafaf9;
 }
 
 .dark .dark\:prose-invert {
