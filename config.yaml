@@ -177,6 +177,7 @@ imaging:
     resampleFilter: Lanczos
 
 module:
+  proxy: https://goproxy.cn
   imports:
-  - path: github.com/hugomods/icons/vendors/simple-icons
   - path: github.com/hugomods/icons/vendors/bootstrap
+  - path: github.com/hugomods/icons/vendors/simple-icons

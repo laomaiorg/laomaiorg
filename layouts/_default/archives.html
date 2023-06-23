@@ -35,9 +35,9 @@
 
             <my-details class="my-details-disclosure" {{ if eq $currentIndex 0 }}open{{ end }}>
                 <summary class="my-summary">
-                    <h3 class="archive-year-header text-4xl font-semibold pt-8 pb-4">
+                    <h3 class="archive-year-header text-3xl font-Hubot font-bold pt-8 pb-2">
                         {{- replace .Key "0001" "" }}
-                        <sup class="-left-1 text-sm text-stone-400 -top-6 font-extralight">{{ len .Pages }}</sup>
+                        <sup class="-left-1 text-sm text-stone-400 -top-4 font-extralight">{{ len .Pages }}</sup>
                     </h3>
                 </summary>
                 <div class="my-archive-posts">
