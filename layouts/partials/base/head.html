@@ -29,7 +29,8 @@
 	{{ else }}
 	<meta name="description" content="{{ .Site.Params.description }}">
 	{{ end }}
-	{{ partial "base/favicon" . }}
+	<!-- {{ partial "base/favicon" . }} -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	{{ if .Params.author }}
 	<meta name="author" content="{{ .Params.author }}">
 	{{ else }}
