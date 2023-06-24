@@ -128,10 +128,10 @@
     <ul class="latestPosts">
       {{ range first 5 (where site.RegularPages "Type" "in" "post") }}
       <li class="!pb-2 md:!pb-4 flex gap-1 flex-col md:flex-row opacity-90 md:gap-2">
-        <p class="border-b border-b-transparent hover:border-b-stone-400 duration-700">
-          <a class="hover:text-stone-900 dark:text-stone-100 hover:opacity-100 duration-300" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <p class="">
+          <a class="border-b border-b-transparent hover:border-b-stone-400 hover:text-stone-900 dark:text-stone-100 hover:opacity-100 duration-700" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </p>
-        <p class="text-stone-400 m-0">
+        <p class="text-stone-400">
           <span>{{ .Date.Format "Jan 2" }} · ≈{{ .ReadingTime }}min</span>
         </p>
       </li>
