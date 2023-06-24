@@ -10,8 +10,7 @@
 	"settings": {
 		"explorer.fileNesting.enabled": true,
 		"files.exclude": {
-			".vscode": true,
-			"resources": true
+			".vscode": true
 		},
 		"editor.tabSize": 2
 	}

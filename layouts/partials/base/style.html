@@ -1,17 +1,12 @@
-<!-- scss -->
-{{ $style := resources.Get "css/laomai.scss" | resources.ToCSS }}
-{{ $CSS := slice $style | resources.Concat "css/laomai.css" }}
-
 {{ if not .Site.IsServer }}
-<!-- {{ $CSS := $CSS | minify | fingerprint | toCSS ( dict "outputStyle" "compressed" "enableSourceMap" true ) }} -->
-{{ $CSS := $style | minify | fingerprint "md5" | toCSS ( dict "outputStyle" "compressed" "enableSourceMap" true ) }}
-
 <!-- tailwindcss -->
 <link href="/css/style.min.css" rel="stylesheet">
-<link href="{{ $CSS.Permalink }}" integrity="{{ $CSS.Data.Integrity }}" rel="stylesheet">
-<!-- <link href="{{ $CSS.Permalink }}" rel="stylesheet"> -->
 {{ else }}
 <!-- tailwindcss -->
 <link href="/css/style.css" rel="stylesheet">
-<link href="{{ $CSS.RelPermalink }}" rel="stylesheet">
+{{ end }}
+
+{{ $options := dict "transpiler" "dartsass" "targetPath" "css/laomai.css" }}
+{{ with resources.Get "css/laomai.scss" | toCSS $options | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
