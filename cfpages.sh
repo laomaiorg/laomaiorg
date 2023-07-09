@@ -10,11 +10,14 @@ cd /home/nas/laomai/laomaiorg
 git fetch --all
 git reset --hard nas/main
 
-rm -rf /home/nas/laomai/laomaiorg/content/diary
-rm -rf /home/nas/laomai/laomaiorg/content/post
 
-cp -r /home/nas/laomai/obtohugo/diary /home/nas/laomai/laomaiorg/content
-cp -r /home/nas/laomai/obtohugo/post /home/nas/laomai/laomaiorg/content
+rsync -r --checksum /home/nas/laomai/obtohugo/diary/ /home/nas/laomai/laomaiorg/content/diary
+rsync -r --checksum /home/nas/laomai/obtohugo/post/ /home/nas/laomai/laomaiorg/content/post
+# rm -rf /home/nas/laomai/laomaiorg/content/diary
+# rm -rf /home/nas/laomai/laomaiorg/content/post
+
+# cp -r /home/nas/laomai/obtohugo/diary /home/nas/laomai/laomaiorg/content
+# cp -r /home/nas/laomai/obtohugo/post /home/nas/laomai/laomaiorg/content
 
 git add .
 git commit -m "$msg"
