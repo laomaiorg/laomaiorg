@@ -1361,12 +1361,12 @@ video {
   font-weight: 700;
 }
 
-.font-extralight {
-  font-weight: 200;
-}
-
 .font-semibold {
   font-weight: 600;
+}
+
+.font-extralight {
+  font-weight: 200;
 }
 
 .leading-\[3rem\] {
@@ -1496,22 +1496,9 @@ video {
   color: rgb(28 25 23 / var(--tw-text-opacity));
 }
 
-.hover\:text-red-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity));
-}
-
 .hover\:text-red-600:hover {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
-
-.hover\:decoration-2:hover {
-  text-decoration-thickness: 2px;
 }
 
 .hover\:opacity-80:hover {
