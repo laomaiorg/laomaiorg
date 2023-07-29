@@ -1392,8 +1392,8 @@ video {
   text-decoration-line: none;
 }
 
-.underline-offset-2 {
-  text-underline-offset: 2px;
+.underline-offset-8 {
+  text-underline-offset: 8px;
 }
 
 .opacity-80 {
@@ -1507,6 +1507,28 @@ video {
 
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.prose-a\:underline-offset-8 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  text-underline-offset: 8px;
+}
+
+.prose-a\:underline-offset-4 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  text-underline-offset: 4px;
+}
+
+.hover\:prose-a\:text-red-500 :is(:where(a):not(:where([class~="not-prose"] *))):hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.hover\:prose-a\:text-red-600 :is(:where(a):not(:where([class~="not-prose"] *))):hover {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.hover\:prose-a\:no-underline :is(:where(a):not(:where([class~="not-prose"] *))):hover {
+  text-decoration-line: none;
 }
 
 .dark .dark\:border-stone-800 {
