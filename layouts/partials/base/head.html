@@ -1,48 +1,56 @@
 <head>
-	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit" />
-	<meta name="force-rendering" content="webkit"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8" />
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-	<link rel='preconnect' href='https://cdn.qylao.com' />
-	<link rel='preconnect' href='https://cdn.staticfile.org' />
-	<meta http-equiv='x-dns-prefetch-control' content='on'>
-	<link rel='dns-prefetch' href='//cdn.qylao.com' />
-	<link rel='dns-prefetch' href='//cdn.staticfile.org' />
-	<link rel="prefetch" href="https://cdn.qylao.com/font/Hubot-Sans-Bold.woff" as="font" type="font/woff" crossorigin>
-	<link rel="prefetch" href="https://cdn.qylao.com/font/Hubot-Sans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="prefetch" href="https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="prefetch" href="https://cdn.qylao.com/font/MonteCarlo-Regular-subset.woff" as="font" type="font/woff" crossorigin>
-	<title>
-	{{- block "title" . -}}
-	{{ if .IsPage }}
-	{{ .Title }} - {{ .Site.Title }}
-	{{ else }}
-	{{ .Site.Title }}
-	{{ end }}
-	{{- end -}}
-	</title>
-	{{ if .Params.description }}
-	<meta name="description" content="{{ .Params.description }}">
-	{{ else }}
-	<meta name="description" content="{{ .Site.Params.description }}">
-	{{ end }}
-	<!-- {{ partial "base/favicon" . }} -->
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	{{ if .Params.author }}
-	<meta name="author" content="{{ .Params.author }}">
-	{{ else }}
-	<meta name="author" content="老麦">
-	{{ end }}
-	{{ with .OutputFormats.Get "RSS" -}}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-	{{ end }}
-	{{ partial "base/style" . }}
-	<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	
-	<script>
+  <link rel="preconnect" href="https://sdn.qylao.com" />
+  <link rel="preconnect" href="https://cdn.staticfile.org" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <link rel="dns-prefetch" href="//cdn.qylao.com" />
+  <link rel="dns-prefetch" href="//cdn.staticfile.org" />
+  <link rel="prefetch" href="https://sdn.qylao.com/font/Hubot-Sans-Bold.woff" as="font" type="font/woff" crossorigin />
+  <link
+    rel="prefetch"
+    href="https://sdn.qylao.com/font/Hubot-Sans-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+  <link
+    rel="prefetch"
+    href="https://sdn.qylao.com/font/MonteCarlo-Regular-subset.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+  <link
+    rel="prefetch"
+    href="https://sdn.qylao.com/font/MonteCarlo-Regular-subset.woff"
+    as="font"
+    type="font/woff"
+    crossorigin />
+  <title>
+    {{- block "title" . -}} {{ if .IsPage }} {{ .Title }} - {{ .Site.Title }} {{ else }} {{ .Site.Title }} {{ end }} {{-
+    end -}}
+  </title>
+  {{ if .Params.description }}
+  <meta name="description" content="{{ .Params.description }}" />
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}" />
+  {{ end }}
+  <!-- {{ partial "base/favicon" . }} -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  {{ if .Params.author }}
+  <meta name="author" content="{{ .Params.author }}" />
+  {{ else }}
+  <meta name="author" content="老麦" />
+  {{ end }} {{ with .OutputFormats.Get "RSS" -}} {{ printf `
+  <link rel="%s" type="%s" href="%s" title="%s" />
+  ` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }} {{ end }} {{ partial "base/style" . }}
+  <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <script>
     const element = document.documentElement;
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
     // 定义跟随系统
