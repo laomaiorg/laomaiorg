@@ -1,8 +1,12 @@
-/** @type {import('tailwindcss').Config} */
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
-  content: ["./layouts/**/*.{html,js,svg}"],
-  darkMode: 'class',
-  theme: {
+  content: [
+    './hugo_stats.json',
+    './layouts/**/*.{html,js,svg}'
+  ],
+	darkMode: 'class',
+	theme: {
     extend: {
       keyframes: {
         'text-shimmer': {
@@ -46,7 +50,5 @@ module.exports = {
       }
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
+	plugins: [typography],
+};

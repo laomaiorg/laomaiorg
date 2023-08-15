@@ -13,6 +13,9 @@
   unicode-range: U+2D, U+30-39, U+4C, U+4D, U+61, U+69, U+6F, U+A9;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "laomai.scss";

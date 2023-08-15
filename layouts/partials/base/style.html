@@ -1,12 +1,22 @@
-{{ if not .Site.IsServer }}
-<!-- tailwindcss -->
-<link href="/css/style.min.css" rel="stylesheet">
-{{ else }}
-<!-- tailwindcss -->
-<link href="/css/style.css" rel="stylesheet">
+{{/* styles */}}
+{{ $options := dict "inlineImports" true }}
+{{ $styles := resources.Get "css/styles.css" }}
+{{ $styles = $styles | resources.PostCSS $options }}
+{{ if hugo.IsProduction }}
+  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end }}
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
-{{ $options := dict "transpiler" "dartsass" "targetPath" "css/laomai.css" }}
-{{ with resources.Get "css/laomai.scss" | toCSS $options | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
+{{ $css := resources.Get "main.scss" }}
+{{ $css = $css | toCSS }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+
+{{/* NOTE: we must change the CSS target to separate the style between LTR and RTL sites. */}}
+{{/* Otherwise, Hugo may treats it as the same style (cached). */}}
+{{/* Ignore it if your themes and sites aren't going to support RTL. */}}
+{{ $rtl := eq .Language.LanguageDirection "rtl" }}
+{{ $cssTarget := cond $rtl "css/main.rtl.css" "css/main.css" }}
+{{ $css := resources.Get "main.scss" | toCSS }}
+{{ $searchCSS := partial "search/assets/css-resource" . }}
+{{ $css = slice $searchCSS $css | resources.Concat $cssTarget }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />

@@ -1,3 +1,9 @@
+{{/* Merge demo site JS and search JS. */}}
+{{- $js := partialCached "assets/js-resource" . }}
+{{ $searchJS := partialCached "search/assets/js-resource" . }}
+{{ $js = slice $js $searchJS | resources.Concat "js/bundle.js" }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+
 <!-- umami -->
 <script
   async

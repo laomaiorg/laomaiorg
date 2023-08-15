@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article
-  class="prose dark:prose-invert my-20 m-auto prose-a:underline-offset-4 hover:prose-a:no-underline hover:prose-a:text-red-600 duration-700">
+  class="prose dark:prose-invert my-20 m-auto prose-a:underline-offset-4 hover:prose-a:no-underline hover:prose-a:text-red-600 prose-pre:my-2 duration-700">
   <h1>{{ .Title }}</h1>
   <time>{{ .Date.Format "January 02, 2006" }} · <span id="twikoo_visitors">0</span> Vis</time>
   <div class="article-content">{{ .Content }}</div>
@@ -32,4 +32,5 @@
     });
   }
 </script>
+{{ partialCached "code-block-panel/assets/js" . }}
 {{ end }}

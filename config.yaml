@@ -1,9 +1,9 @@
 baseurl: https://laomai.org/
-languageCode: zh-cn
+# languageCode: zh-hans
 title: 老麦笔记
 hasCJKLanguage: true
 summaryLength: 56
-DefaultContentLanguage: zh-cn
+DefaultContentLanguage: zh-hans
 disableHugoGeneratorInject: true
 enableRobotsTXT: true
 paginate: 10
@@ -14,6 +14,21 @@ permalinks:
   post: /archives/:slugorfilename/
   page: /:slugorfilename/
 # uglyurls: true        # 开启此选项网址则变为.html这种形式。
+
+outputs:
+  home:
+  - HTML
+  - Search
+  - SearchIndex
+
+languages:
+  zh-hans:
+    weight: 1
+    languageName: 简体中文
+  en:
+    weight: 2
+    languageName: English
+
 
 params:
   # imageProcessing:
@@ -86,6 +101,13 @@ params:
 
   # sidebar: true
 
+  # 代码块
+  code_block_panel:
+    max_lines: 10
+
+  # search:
+  #   stall_threshold: 200
+
 markup:
   asciidocExt:
     attributes: {}
@@ -133,7 +155,7 @@ markup:
     lineAnchors: ''
     lineNoStart: 1
     lineNos: true
-    lineNumbersInTable: true
+    lineNumbersInTable: false
     noClasses: true
     style: dracula
     tabWidth: 2
@@ -180,4 +202,24 @@ module:
   proxy: https://goproxy.cn
   imports:
     - path: github.com/hugomods/icons/vendors/bootstrap
+    - path: github.com/hugomods/code-block-panel
+    - path: github.com/hugomods/search
 #   - path: github.com/hugomods/icons/vendors/simple-icons
+  mounts:
+    - source: "assets"
+      target: "assets"
+    - source: "hugo_stats.json"
+      target: "assets/watching/hugo_stats.json"
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: assets/watching/hugo_stats\.json
+    target: styles\.css
+  - source: (postcss|tailwind)\.config\.js
+    target: css
+  - source: assets/.*\.(js|ts|jsx|tsx)
+    target: js
+  - source: assets/.*\.(.*)$
+    target: $1
