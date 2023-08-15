@@ -1,9 +1,9 @@
 baseurl: https://laomai.org/
-# languageCode: zh-hans
+languageCode: en
 title: 老麦笔记
 hasCJKLanguage: true
 summaryLength: 56
-DefaultContentLanguage: zh-hans
+defaultContentLanguage: zh-hans
 disableHugoGeneratorInject: true
 enableRobotsTXT: true
 paginate: 10
@@ -28,7 +28,13 @@ languages:
   en:
     weight: 2
     languageName: English
-
+  # zh-hant:
+  #   weight: 3
+  #   languageName: 繁体中文
+  # ar:
+  #   weight: 4
+  #   languageName: العربية
+  #   LanguageDirection: rtl
 
 params:
   # imageProcessing:

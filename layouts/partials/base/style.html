@@ -7,10 +7,6 @@
 {{ end }}
 <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
-{{ $css := resources.Get "main.scss" }}
-{{ $css = $css | toCSS }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-
 {{/* NOTE: we must change the CSS target to separate the style between LTR and RTL sites. */}}
 {{/* Otherwise, Hugo may treats it as the same style (cached). */}}
 {{/* Ignore it if your themes and sites aren't going to support RTL. */}}
@@ -18,5 +14,5 @@
 {{ $cssTarget := cond $rtl "css/main.rtl.css" "css/main.css" }}
 {{ $css := resources.Get "main.scss" | toCSS }}
 {{ $searchCSS := partial "search/assets/css-resource" . }}
-{{ $css = slice $searchCSS $css | resources.Concat $cssTarget }}
+{{ $css = slice $searchCSS $css | resources.Concat $cssTarget | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
