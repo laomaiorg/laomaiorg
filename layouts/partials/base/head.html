@@ -31,23 +31,30 @@
     type="font/woff"
     crossorigin />
   <title>
-    {{- block "title" . -}} {{ if .IsPage }} {{ .Title }} - {{ .Site.Title }} {{ else }} {{ .Site.Title }} {{ end }} {{-
-    end -}}
+  {{- block "title" . -}} 
+  {{ if .IsPage }} {{ .Title }} - {{ .Site.Title }} {{ else }} {{ .Site.Title }} {{ end }} 
+  {{- end -}}
   </title>
+
   {{ if .Params.description }}
   <meta name="description" content="{{ .Params.description }}" />
   {{ else }}
   <meta name="description" content="{{ .Site.Params.description }}" />
   {{ end }}
+
   <!-- {{ partial "base/favicon" . }} -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   {{ if .Params.author }}
   <meta name="author" content="{{ .Params.author }}" />
   {{ else }}
   <meta name="author" content="老麦" />
-  {{ end }} {{ with .OutputFormats.Get "RSS" -}} {{ printf `
-  <link rel="%s" type="%s" href="%s" title="%s" />
-  ` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }} {{ end }} {{ partial "base/style" . }}
+  {{ end }}
+
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+
+  {{ partial "base/style" . }}
   <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
   <script>

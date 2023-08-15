@@ -1,5 +1,8 @@
 baseurl: https://laomai.org/
-languageCode: en
+author:
+  name: 老麦
+copyright: 本博客用来记录个人生活、学习、想法等等杂七杂八的笔记，按理说不应该能产生多大的价值。但是如果转载请说明出处，谢谢！
+languageCode: zh-hans
 title: 老麦笔记
 hasCJKLanguage: true
 summaryLength: 56
@@ -18,6 +21,7 @@ permalinks:
 outputs:
   home:
   - HTML
+  - RSS
   - Search
   - SearchIndex
 
