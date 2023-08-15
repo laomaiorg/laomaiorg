@@ -1,2 +1,16 @@
 @import "mods/snackbar/scss/index"; // used to show the result of copying code.
 @import "mods/code-block-panel/scss/index";
+
+@media (min-width: 666px) {
+  .search-modal {
+    max-width: 70ch;
+    left: calc((100% - 70ch)/2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-modal {
+    max-width: 70ch;
+    left: calc((100% - 70ch)/2);
+  }
+}
