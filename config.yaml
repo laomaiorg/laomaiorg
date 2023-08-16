@@ -51,7 +51,7 @@ params:
   # homeFullContent: true
   rssFullContent: false
 
-  defaultcover: post/laomai/2023/01/25/163d10df202a40-1.webp
+  defaultcover: postImages/laomai/2023/01/25/163d10df202a40-1.webp
 
   # webimg:
   #     # logo: https://cravatar.cn/avatar/8b7f3b316357d4b0439470c51ae7af05?s=100&d=mm&r=g
