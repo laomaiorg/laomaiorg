@@ -11,6 +11,7 @@ disableHugoGeneratorInject: true
 enableRobotsTXT: true
 paginate: 10
 rssLimit: 10
+timeout: 120s
 
 permalinks:
   diary: /diary/:year/:month/:day/
