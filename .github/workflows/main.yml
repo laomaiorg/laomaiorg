@@ -49,6 +49,9 @@ jobs:
         run: |
           hugo --gc --minify
 
+        # 将超时时间设置为 3 分钟
+        timeout-minutes: 3
+
       # - name: Search
       #   run: |
       #     npx pagefind --source "public"
