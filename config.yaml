@@ -41,11 +41,11 @@ languages:
   #   LanguageDirection: rtl
 
 params:
-  # imageProcessing:
-  #     cover:
-  #         enabled: true
-  #     content:
-  #         enabled: true
+  imageProcessing:
+      cover:
+          enabled: true
+      content:
+          enabled: true
 
   # homeFullContent: true
   rssFullContent: false
@@ -71,25 +71,6 @@ params:
   comments:
     enabled: true
     provider: twikoo
-
-    #     # Waline client configuration see: https://waline.js.org/en/reference/client.html
-    #     waline:
-    #         serverURL: https://comments.iamlm.com/
-    #         lang: zh-cn
-    #         visitor: true
-    #         emoji:
-    #             - https://sdn.qylao.com/emojis/weibo
-    #         requiredMeta: ['nick', 'mail']
-    #         placeholder: 在这里分享您的观点与想法，昵称、邮箱必填，邮件通知回复。
-    #         highlight: false
-    #         copyright: false
-    #         avatarCDN: https://sdn.geekzu.org/avatar/
-    #         locale:
-    #             admin: 🖊
-
-    artalk:
-      server: 'https://home.laomai.org:23443'
-      site: '老麦笔记'
 
     twikoo:
       envId: https://twikoo.laomai.org
