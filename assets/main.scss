@@ -1,6 +1,23 @@
 @import "mods/snackbar/scss/index"; // used to show the result of copying code.
 @import "mods/code-block-panel/scss/index";
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --search-primary: #9ca3af;
+    --search-container-bg: #1c1917;
+    --search-bg: #0c0a09;
+    --search-color: #e7e5e4;
+    --search-color-secondary: #a8a29e;
+    --search-result-bg: #1c1917;
+    --search-result-bg-active: #292524;
+    --search-result-color: #f5f5f4;
+    --search-result-color-active: #fafaf9;
+    --search-result-color-secondary: #d6d3d1;
+    --search-result-color-secondary-active: #e7e5e4;
+    --search-border-color: #57534e;
+  }
+}
+
 @media (min-width: 666px) {
   .search-modal {
     max-width: 70ch;
@@ -14,3 +31,4 @@
     left: calc((100% - 70ch)/2);
   }
 }
+
