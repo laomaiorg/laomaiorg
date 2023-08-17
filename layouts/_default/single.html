@@ -2,7 +2,7 @@
 <article
   class="prose dark:prose-invert my-20 m-auto prose-a:underline-offset-4 hover:prose-a:no-underline hover:prose-a:text-red-600 duration-700">
   <h1>{{ .Title }}</h1>
-  <time>{{ .Date.Format "January 02, 2006" }} · <span id="twikoo_visitors">0</span> Vis</time>
+  <time class="inline-block align-middle">{{ .Date.Format "January 02, 2006" }}</time> · <span id="twikoo_visitors" class="inline-block align-middle">0</span> {{ partial "icons/icon" (dict "vendor" "bootstrap" "name" "eye" "className" "inline-block align-middle opacity-70 ml-1") }}
   <div class="article-content">{{ .Content }}</div>
 </article>
 {{ partial "single/singlepag" . }}
