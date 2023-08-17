@@ -5,33 +5,5 @@
   {{ partial (printf "home/%s" .) . }}
   {{ end }} 
 </div>
-<script src="{{ $.Site.Params.comments.twikoo.client }}"></script>
-  
-  <script>
-    // 定义异步函数用于加载 JSON 文件
-    async function loadJSON() {
-      try {
-        const response = await fetch('slugs.json'); // 使用 Fetch API 加载 JSON 文件
-        const text = await response.text(); // 获取文件内容
-        const json = JSON.parse(text); // 解析 JSON 数据
-
-        const urls = Object.values(json); // 获取解析后的数据作为参数
-
-        twikoo.getCommentsCount({
-          envId: 'https://twikoo.laomai.org',
-          urls: urls,
-          includeReply: true
-        }).then(function (res) {
-          console.log(res);
-        }).catch(function (err) {
-          console.error(err);
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    // 调用异步函数加载 JSON 文件并执行相应操作
-    loadJSON();
-  </script>
+{{ partial "home/twikooCount" . }}
 {{ end }}

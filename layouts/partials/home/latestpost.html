@@ -22,7 +22,9 @@
         >
       </p>
       <p class="text-stone-400">
-        <span>{{ .Date.Format "Jan 2" }} · ≈{{ .ReadingTime }}min</span>
+        <span class="inline-block align-middle">{{ .Date.Format "Jan 2" }} · ≈{{ .ReadingTime }}min · </span>
+        {{ partial "icons/icon" (dict "vendor" "bootstrap" "name" "chat" "className" "inline-block align-middle opacity-70 ml-1") }}
+        <span id="{{ .RelPermalink }}" class="inline-block align-middle"></span> <!-- 添加用于显示评论数量的占位符 -->
       </p>
     </li>
     {{ end }}
