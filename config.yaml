@@ -23,6 +23,7 @@ outputs:
   home:
   - HTML
   - RSS
+  - JSON
   - Search
   - SearchIndex
 
@@ -57,6 +58,11 @@ params:
   #     # logo: https://cravatar.cn/avatar/8b7f3b316357d4b0439470c51ae7af05?s=100&d=mm&r=g
   #     logo: images/maiht.jpeg
   #     # bg: https://sdn.qylao.com/wp-content/uploads/2022/04/sea-gc05b59c74_1920.jpg
+
+  home:
+    - aboutme
+    - findme
+    - latestpost
 
   mainSections:
     - post

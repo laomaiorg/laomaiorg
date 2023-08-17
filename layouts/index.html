@@ -1,135 +1,37 @@
 {{ define "main" }}
 <div id="home">
   <h1 class="hidden">{{ .Site.Title }}</h1>
-  <div class="title mt-12 text-5xl font-bold font-Hubot md:mt-16">
-    <span class="block">Hello,</span>
-    <span class="block mt-2">I'm LaoMai.</span>
-  </div>
-  <div class="mt-4 font-serif opacity-80 md:mt-6">
-    <p class="mt-2">Amateur developer.</p>
-    <p class="mt-2">Currently working from home and living in QingYuan.</p>
-    <p class="mt-2">Likes front-end development and digital products.</p>
-  </div>
-  <div class="icons pt-2 flex flex-wrap gap-3">
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="/archives/">
-      <icon class="inline-block">
-        {{ $postcard := dict "vendor" "bs" "name" "postcard-heart" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $postcard }}<span class="inline-block align-middle ml-1">Blog</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="/links/">
-      <icon class="inline-block">
-        {{ $link := dict "vendor" "bs" "name" "link-45deg" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $link }}<span class="inline-block align-middle ml-1">Links</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://iamlm.com" target="_blank">
-      <icon class="inline-block">
-        {{ $bialt := dict "vendor" "bs" "name" "alt" "className" "inline-block align-middle" }} {{ partial "icons/icon"
-        $bialt }}<span class="inline-block align-middle ml-1">实验室</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://github.com/laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        {{ $github := dict "vendor" "bs" "name" "github" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $github }}<span class="inline-block align-middle ml-1">Github</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://twitter.com/laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        {{ $twitter := dict "vendor" "bs" "name" "twitter" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $twitter }}<span class="inline-block align-middle ml-1">Twitter</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://www.youtube.com/@laomaiorg" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        {{ $youtube := dict "vendor" "bs" "name" "youtube" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $youtube }}<span class="inline-block align-middle ml-1">YouTube</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://www.instagram.com/laomaiorg/" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        {{ $instagram := dict "vendor" "bs" "name" "instagram" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $instagram }}<span class="inline-block align-middle ml-1">Instagram</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://weibo.com/u/76386" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        {{ $sinaweibo := dict "vendor" "bs" "name" "sina-weibo" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $sinaweibo }}<span class="inline-block align-middle ml-1">微博</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="https://space.bilibili.com/214467076" target="_blank" rel="noopener noreferrer nofollow">
-      <icon class="inline-block">
-        <svg
-          class="w-4 h-4 inline-block align-middle"
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <title>Bilibili</title>
-          <path
-            d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z" /></svg
-        ><span class="inline-block align-middle ml-1">哔哩哔哩</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500" href="/index.xml">
-      <icon class="inline-block">
-        {{ $rss := dict "vendor" "bs" "name" "rss" "className" "inline-block align-middle" }} {{ partial "icons/icon"
-        $rss }}<span class="inline-block align-middle ml-1">RSS订阅</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500"
-      href="https://www.foreverblog.cn/go.html"
-      target="_blank"
-      title="穿梭虫洞-随机访问十年之约友链博客"
-      rel="external nofollow ug noopener noreferrer">
-      <icon class="inline-block">
-        {{ $wormhole := dict "vendor" "bs" "name" "arrow-left-right" "className" "inline-block align-middle" }} {{
-        partial "icons/icon" $wormhole }}<span class="inline-block align-middle ml-1">穿梭虫洞</span>
-      </icon>
-    </a>
-    <a class="p-1 border-b border-b-stone-400/60 hover:border-b-stone-700 dark:hover:border-b-stone-100 duration-500"
-      href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
-      target="_blank"
-      rel="external nofollow ug noopener noreferrer">
-      <icon class="inline-block">
-        {{ $upyun := dict "vendor" "bs" "name" "cloud" "className" "inline-block align-middle" }} {{ partial
-        "icons/icon" $upyun }}<span class="inline-block align-middle ml-1"
-          >又拍云<span class="opacity-20">提供加速服务</span></span
-        >
-      </icon>
-    </a>
-  </div>
-  <hr class="mx-auto my-10 w-1/4 border-stone-200 dark:border-stone-800 md:w-1/2" />
-  <div class="pb-8">
-    <h2 class="flex justify-between pb-4">
-      <span class="inline-block align-middle font-Hubot font-semibold text-3xl"> Latest Posts </span>
-      <svg
-        class="inline-block align-middle w-7 h-7 m-1 opacity-20 hover:opacity-80 duration-1000"
-        role="img"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg">
-        <title>最新文章</title>
-        <path
-          d="M12.002 0C9.79 0 7.575.71 5.722 2.127a.472.472 0 00-.093.658.46.46 0 00.654.093 9.404 9.404 0 0111.44 0c.202.16.5.116.653-.093a.474.474 0 00-.093-.658A10.323 10.323 0 0012.003 0zm.03 3.11a11.947 11.947 0 00-5.966 1.608 13.784 13.784 0 00-4.83 4.747c-.303.536.444 1.021.8.497a12.816 12.816 0 014.494-4.43 11.015 11.015 0 015.5-1.481c1.905.003 3.78.507 5.432 1.462 1.71.977 3.26 2.457 4.503 4.45a.46.46 0 00.414.23.46.46 0 00.4-.252.461.461 0 00-.022-.474v-.002c-1.31-2.12-2.982-3.71-4.834-4.77A11.795 11.795 0 0012.03 3.11zM12 6.164a9.27 9.27 0 00-3.71.73c-1.643.706-2.97 1.88-4.064 3.343-1.096 1.46-1.97 3.213-2.73 5.102a.474.474 0 00.262.612c.375.134.552-.144.6-.267.985-2.46 2.16-4.624 3.697-6.14a8.28 8.28 0 012.6-1.784 8.415 8.415 0 013.34-.648 9.51 9.51 0 012.98.447 7.345 7.345 0 013.39 2.25c.898 1.057 1.557 2.423 1.917 4.09.172.83.255 1.675.255 2.524a9.204 9.204 0 01-.17 1.837.47.47 0 00.355.556.472.472 0 00.558-.36c.134-.67.2-1.351.19-2.033 0-.916-.09-1.827-.272-2.722a11.155 11.155 0 00-1.207-3.2 8.394 8.394 0 00-3.288-3.232c-1.358-.731-2.95-1.104-4.7-1.104zm.102 3.076a7.51 7.51 0 00-2.214.3 5.317 5.317 0 00-1.45.7 6.552 6.552 0 00-1.787 1.906c-.702 1.093-1.19 2.33-1.698 3.479a17.31 17.31 0 01-.793 1.626c-.27.478-.594.92-.964 1.314-.418.459.216 1.094.665.662v.002c.763-.78 1.28-1.754 1.75-2.776.348-.76.664-1.541 1.007-2.277.247-.543.53-1.065.846-1.567A5.4 5.4 0 019.2 10.865c.718-.425 1.603-.685 2.802-.685a5.82 5.82 0 012.565.538c.518.25.986.59 1.385 1.003.6.633 1.05 1.395 1.322 2.226a8.63 8.63 0 01.438 2.776c-.002.98-.145 1.955-.425 2.895a8.869 8.869 0 01-1.21 2.563.472.472 0 00.122.65.465.465 0 00.646-.11 9.887 9.887 0 001.34-2.836c.3-1.024.458-2.09.46-3.157a9.76 9.76 0 00-.385-2.753c-.39-1.317-1.084-2.5-2.128-3.363a5.768 5.768 0 00-1.824-1.008 7.525 7.525 0 00-2.204-.364zm-.094 3.083c-.726.01-1.425.27-1.986.73a3.712 3.712 0 00-1.23 1.779c-.116.358-.185.749-.283 1.189a8.902 8.902 0 01-.782 2.249c-.438.838-1.11 1.757-2.22 2.72a.474.474 0 00-.052.66c.168.198.465.22.66.05.7-.6 1.32-1.285 1.846-2.038a8.727 8.727 0 001.266-2.705c.11-.393.187-.754.254-1.065a8.48 8.48 0 01.19-.777c.168-.525.49-.988.922-1.33a2.264 2.264 0 011.405-.522c.31.005.617.077.898.213.458.23.84.57 1.12.996.282.414.44.9.45 1.402.02 1.09-.11 2.18-.397 3.234a9.355 9.355 0 01-2.403 4.09c-.18.186-.18.48.002.665.272.242.566.113.662-.005a10.309 10.309 0 002.642-4.495 12.48 12.48 0 00.438-3.49 3.37 3.37 0 00-.284-1.327 3.843 3.843 0 00-1.245-1.567 3.125 3.125 0 00-1.873-.656zm-.015 3.08a.468.468 0 00-.466.47h.002a7.5 7.5 0 01-.244 1.972 7.319 7.319 0 01-1.163 2.395c-.61.819-1.27 1.59-1.994 2.308a.474.474 0 00.015.667.468.468 0 00.662-.016c1.05-1.096 1.958-2.1 2.622-3.252a7.46 7.46 0 00.76-1.868c.186-.72.282-1.461.274-2.205a.47.47 0 00-.468-.47z" />
-      </svg>
-    </h2>
-    <ul class="latestPosts">
-      {{ range first 5 (where site.RegularPages "Type" "in" "post") }}
-      <li class="!pb-2 md:!pb-4 flex gap-1 flex-col md:flex-row opacity-90 md:gap-2">
-        <p class="">
-          <a
-            class="p-1 border-b border-b-transparent hover:border-b-stone-400 hover:text-stone-900 dark:text-stone-100 hover:opacity-100 duration-300"
-            href="{{ .RelPermalink }}"
-            >{{ .Title }}</a
-          >
-        </p>
-        <p class="text-stone-400">
-          <span>{{ .Date.Format "Jan 2" }} · ≈{{ .ReadingTime }}min</span>
-        </p>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
+  {{ range .Site.Params.home }}
+  {{ partial (printf "home/%s" .) . }}
+  {{ end }} 
 </div>
+<script src="{{ $.Site.Params.comments.twikoo.client }}"></script>
+  
+  <script>
+    // 定义异步函数用于加载 JSON 文件
+    async function loadJSON() {
+      try {
+        const response = await fetch('slugs.json'); // 使用 Fetch API 加载 JSON 文件
+        const text = await response.text(); // 获取文件内容
+        const json = JSON.parse(text); // 解析 JSON 数据
+
+        const urls = Object.values(json); // 获取解析后的数据作为参数
+
+        twikoo.getCommentsCount({
+          envId: 'https://twikoo.laomai.org',
+          urls: urls,
+          includeReply: true
+        }).then(function (res) {
+          console.log(res);
+        }).catch(function (err) {
+          console.error(err);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // 调用异步函数加载 JSON 文件并执行相应操作
+    loadJSON();
+  </script>
 {{ end }}
