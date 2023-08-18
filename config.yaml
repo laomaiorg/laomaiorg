@@ -23,7 +23,6 @@ outputs:
   home:
   - HTML
   - RSS
-  - JSON
   - Search
   - SearchIndex
 
