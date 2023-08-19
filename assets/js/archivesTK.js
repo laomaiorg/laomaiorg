@@ -1,5 +1,5 @@
 function updateCommentsCount() {
-  let liElements = document.querySelectorAll('.latestPosts li')
+  let liElements = document.querySelectorAll('.archive-entry')
   let urls = []
   
   liElements.forEach(function (li) {
