@@ -87,17 +87,22 @@
     },
     {
         "title": "林海草原",
-        "website": "https://lhcy.org",
+        "website": "https://lhcy.org/",
         "image": "lhcy.org.png"
     },
     {
         "title": "小王子",
-        "website": "https://www.wanghao.me",
+        "website": "https://www.wanghao.me/",
         "image": "www.wanghao.me.png"
     },
     {
         "title": "李子白了",
-        "website": "https://www.mbcao.com",
+        "website": "https://www.mbcao.com/",
+        "image": "www.mbcao.com.png"
+    },
+    {
+        "title": "喂马劈柴",
+        "website": "https://blog.shaoxiao.net/",
         "image": "www.mbcao.com.png"
     },
     {

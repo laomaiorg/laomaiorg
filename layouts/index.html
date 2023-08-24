@@ -1,9 +1,12 @@
 {{ define "main" }}
 <div id="home">
   <h1 class="hidden">{{ .Site.Title }}</h1>
-  {{ range .Site.Params.home }}
+  <!-- {{ range .Site.Params.home }}
   {{ partial (printf "home/%s" .) . }}
-  {{ end }} 
+  {{ end }}  -->
+  {{ partial "home/aboutme" . }}
+  {{ partial "home/findme" . }}
+  {{ partial "home/latestpost" . }}
 </div>
 <!-- {{ partial "home/twikooCount" . }} -->
 {{ end }}

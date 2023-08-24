@@ -21,7 +21,7 @@
         display: block; /* 当前展开的年份对应的文章列表显示 */
     }
 </style>
-<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js" defer></script>
+<script src="{{ $.Site.Params.comments.twikoo.client }}" defer></script>
 {{ $js := resources.Get "js/archivesTK.js" }}
 {{ $js = slice $js | resources.Concat "js/tk.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script>
