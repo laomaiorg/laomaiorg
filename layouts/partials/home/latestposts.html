@@ -14,7 +14,7 @@
   {{ range first 5 (where site.RegularPages "Type" "in" "post") }}
   <li role="article" class="relative pl-6 before:absolute before:z-10 before:left-0 before:top-2 before:h-2 before:w-2 before:-translate-x-1/2 before:rounded-full before:bg-stone-500 before:ring-2 before:ring-white hover:before:bg-emerald-500" data-relpermalink="{{ .RelPermalink }}">
     <div class="flex flex-col flex-1 gap-4">
-      <div class="flex flex-row justify-between">
+      <div class="flex flex-col gap-1 md:flex-row md:gap-3">
         <a class="opacity-90 hover:opacity-100" href="{{ .RelPermalink }}">
           <h4 class="text-lg font-medium hover:text-emerald-500">{{ .Title }}</h4>
         </a>

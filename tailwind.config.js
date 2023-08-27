@@ -3,7 +3,8 @@ const typography = require('@tailwindcss/typography');
 module.exports = {
   content: [
     './hugo_stats.json',
-    './layouts/**/*.{html,js,svg}'
+    './layouts/**/*.{html,js,svg}',
+    './assets/**/*.{html,js,svg}'
   ],
 	darkMode: 'class',
 	theme: {
