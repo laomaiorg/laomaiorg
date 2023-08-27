@@ -1,0 +1,12 @@
+<hr class="mx-auto my-10 w-1/4 border-stone-200 dark:border-stone-800 md:w-1/2" />
+<!-- Component: Leading Image Two Line List -->
+<h2 class="flex justify-between pb-4">
+  <span class="inline-block align-middle font-Hubot font-semibold text-3xl"> Latest Comments </span>
+  {{ partial "icons/icon" (dict "vendor" "bootstrap" "name" "chat-quote" "className" "inline-block align-middle w-7 h-7 m-1 opacity-20 hover:opacity-80 duration-1000") }}
+</h2>
+<ul id="latestComments" class="pb-8"></ul>
+<!-- End Leading Image Two Line List -->
+<script src="{{ $.Site.Params.comments.twikoo.client }}" defer></script>
+{{ $js := resources.Get "js/twikooComments.js" }}
+{{ $js = slice $js | resources.Concat "js/getComments.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script>

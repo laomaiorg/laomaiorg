@@ -1,9 +1,12 @@
 @import "mods/snackbar/scss/index"; // used to show the result of copying code.
 @import "mods/code-block-panel/scss/index";
 
+:root {
+  --search-primary: #10b981;
+}
 @media (prefers-color-scheme: dark) {
   :root {
-    --search-primary: #9ca3af;
+    --search-primary: #10b981;
     --search-container-bg: #1c1917;
     --search-bg: #0c0a09;
     --search-color: #e7e5e4;

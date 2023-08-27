@@ -50,7 +50,7 @@
                         {{- range .Pages }} 
                         {{- if eq .Kind "page" }}
                         <div class="archive-entry" data-relpermalink="{{ .RelPermalink }}">
-                            <a class="flex justify-between align-middle py-4 px-2 rounded border-l-4 border-transparent hover:bg-stone-200 hover:border-stone-700 dark:hover:bg-stone-800 dark:hover:border-stone-300" href="{{ .Permalink }}">
+                            <a class="flex justify-between align-middle py-4 px-2 rounded border-l-4 border-transparent hover:bg-stone-200 hover:border-emerald-500 dark:hover:bg-stone-800" href="{{ .Permalink }}">
                                 <span class="title">{{ .Title }}<sup id="{{ .RelPermalink }}" class="left-1 text-stone-400 font-MonteCarlo font-extralight"></sup></span>
                                 <time class="date min-w-[3rem]">{{ .Date.Format "01-02" }}</time>
                             </a>

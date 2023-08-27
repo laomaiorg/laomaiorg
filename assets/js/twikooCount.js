@@ -1,9 +1,9 @@
 function updateCommentsCount() {
-  let liElements = document.querySelectorAll('.latestPosts li')
-  let urls = []
+  const liElements = document.querySelectorAll('.latestPosts li')
+  const urls = []
   
   liElements.forEach(function (li) {
-    let relPermalink = li.getAttribute('data-relpermalink')
+    const relPermalink = li.getAttribute('data-relpermalink')
     urls.push(relPermalink)
   })
 
@@ -14,7 +14,7 @@ function updateCommentsCount() {
   })
     .then(function (responses) {
       responses.forEach(function (res) {
-        let countElement = document.getElementById(res.url)
+        const countElement = document.getElementById(res.url)
         if (countElement && typeof res.count !== 'undefined') {
           countElement.textContent = res.count
         } else {
