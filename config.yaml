@@ -80,7 +80,7 @@ params:
 
     twikoo:
       envId: https://twikoo.laomai.org
-      client: https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js
+      client: https://cdn.staticfile.org/twikoo/1.6.21/twikoo.all.min.js
 
   description: 平淡的生活更能体现出生命的本质～
 
