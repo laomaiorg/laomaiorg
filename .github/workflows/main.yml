@@ -67,4 +67,4 @@ jobs:
       
       - name: Copy
         run: |
-          rsync -av --delete public jm@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/nginxproxymanager/data/laomai.org/html
+          rsync -av --delete public root@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/nginxproxymanager/data/laomai.org/html
