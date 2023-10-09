@@ -65,6 +65,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
       
+      - name: Scan public keys
+        run: |
+          ssh-keyscan ${{ secrets.BLOG_DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: Copy
         run: |
           rsync -av --delete public root@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/nginxproxymanager/data/laomai.org/html
