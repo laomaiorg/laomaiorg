@@ -24,6 +24,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.BLOG_DEPLOY_KEY }}
 
       - name: Hugo setup
         # You may pin to the exact commit or the version.
@@ -61,3 +64,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+      
+      - name: Copy
+        run: |
+          rsync -av --delete public jm@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/nginxproxymanager/data/laomai.org/html
