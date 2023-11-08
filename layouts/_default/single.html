@@ -10,7 +10,7 @@
   {{ if or (not (isset .Params "comments")) (eq .Params.comments "true")}} {{ partial "comments/include" . }} {{ end }}
 </div>
 
-<script>
+<!-- <script>
   // 获取包含内容的div元素
   const contentDiv = document.querySelector('.article-content');
 
@@ -31,5 +31,5 @@
       });
     });
   }
-</script>
+</script> -->
 {{ end }}
