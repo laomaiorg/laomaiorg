@@ -8,7 +8,7 @@ function updateCommentsCount() {
   })
 
   twikoo.getCommentsCount({
-    envId: 'https://twikoo.laomai.org',
+    envId: 'https://twikoo.qylao.com',
     urls: urls,
     includeReply: false, // 评论数是否包括回复，默认：false
   })

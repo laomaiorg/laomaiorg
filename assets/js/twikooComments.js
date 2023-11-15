@@ -1,6 +1,6 @@
 function updateComments() {
   twikoo.getRecentComments({
-    envId: 'https://twikoo.laomai.org', // 环境 ID
+    envId: 'https://twikoo.qylao.com', // 环境 ID
     pageSize: 5, // 获取多少条，默认：10，最大：100
     includeReply: false // 是否包括最新回复，默认：false
   }).then(function (res) {
