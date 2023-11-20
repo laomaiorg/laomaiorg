@@ -3,7 +3,7 @@
 {{ $styles := resources.Get "css/styles.css" }}
 {{ $styles = $styles | resources.PostCSS $options }}
 {{ if hugo.IsProduction }}
-  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+  {{ $styles = $styles | minify | fingerprint "md5" | resources.PostProcess }}
 {{ end }}
 <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
@@ -14,5 +14,5 @@
 {{ $cssTarget := cond $rtl "css/main.rtl.css" "css/main.css" }}
 {{ $css := resources.Get "main.scss" | toCSS }}
 {{ $searchCSS := partial "search/assets/css-resource" . }}
-{{ $css = slice $searchCSS $css | resources.Concat $cssTarget | minify | fingerprint }}
+{{ $css = slice $searchCSS $css | resources.Concat $cssTarget | minify | fingerprint "md5" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />

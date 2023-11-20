@@ -2,7 +2,7 @@
 {{- $js := partialCached "assets/js-resource" . }}
 {{ $searchJS := partialCached "search/assets/js-resource" . }}
 {{ $codeJS := partialCached "code-block-panel/assets/js-resource" . }}
-{{ $js = slice $js $searchJS $codeJS | resources.Concat "js/bundle.js" | minify | fingerprint }}
+{{ $js = slice $js $searchJS $codeJS | resources.Concat "js/bundle.js" | minify | fingerprint "md5" }}
 <script src="{{ $js.RelPermalink }}" defer></script>
 
 <!-- umami -->
@@ -11,7 +11,7 @@
   defer
   src="https://sdn.qylao.com/laomai/laomai.js"
   data-website-id="85a9edfb-5859-4f66-8a28-f7f8548a80b3"
-  data-host-url="https://umami.laomai.org"
+  data-host-url="https://umami.qylao.com"
   data-domains="laomai.org"></script>
 
 <!-- Mathjax -->

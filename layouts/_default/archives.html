@@ -21,10 +21,7 @@
         display: block; /* 当前展开的年份对应的文章列表显示 */
     }
 </style>
-<script src="{{ $.Site.Params.comments.twikoo.client }}" defer></script>
-{{ $js := resources.Get "js/archivesTK.js" }}
-{{ $js = slice $js | resources.Concat "js/tk.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" defer></script>
+
 <div class="my-20 m-auto">
         <h1 class="hidden">{{ .Title }}</h1>
     <div class="post-len">至今已记录了 {{ len (where .Site.RegularPages "Type" "in" "post") }} 份笔记。</div>
@@ -66,6 +63,44 @@
         <a class="my-4 py-5 pr-8 pl-1 font-mono" href="/" title="Retum Home">> cd ..</a>
     </p>
 </div>
+
+<script src="{{ $.Site.Params.comments.twikoo.client }}" defer></script>
+<!-- {{ $js := resources.Get "js/archivesTK.js" }}
+{{ $js = slice $js | resources.Concat "js/tk.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" defer></script> -->
+<script>
+    function updateCommentsCount() {
+        const liElements = document.querySelectorAll('.archive-entry')
+        const urls = []
+        
+        liElements.forEach(function (li) {
+        const relPermalink = li.getAttribute('data-relpermalink')
+        urls.push(relPermalink)
+        })
+
+        twikoo.getCommentsCount({
+        envId: 'https://twikoo.qylao.com',
+        urls: urls,
+        includeReply: false, // 评论数是否包括回复，默认：false
+        })
+        .then(function (responses) {
+            responses.forEach(function (res) {
+            const countElement = document.getElementById(res.url)
+            if (countElement && typeof res.count !== 'undefined') {
+                countElement.textContent = res.count
+            } else {
+                console.error('Invalid response:', res)
+            }
+            })
+        })
+        .catch(function (err) {
+            console.error(err)
+        })
+    }
+
+    // 页面加载完成后调用更新评论数量函数
+    window.addEventListener('load', updateCommentsCount)
+</script>
 <script>
     // JavaScript 示例代码
 
