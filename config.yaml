@@ -21,10 +21,10 @@ permalinks:
 
 outputs:
   home:
-  - HTML
-  - RSS
-  - Search
-  - SearchIndex
+    - HTML
+    - RSS
+    - Search
+    - SearchIndex
 
 languages:
   zh-hans:
@@ -43,10 +43,10 @@ languages:
 
 params:
   imageProcessing:
-      cover:
-          enabled: true
-      content:
-          enabled: true
+    cover:
+      enabled: true
+    content:
+      enabled: true
 
   # homeFullContent: true
   rssFullContent: false
@@ -80,7 +80,7 @@ params:
 
     twikoo:
       envId: https://twikoo.qylao.com
-      client: https://cdn.staticfile.org/twikoo/1.6.22/twikoo.all.min.js
+      client: https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js
 
   description: 平淡的生活更能体现出生命的本质～
 
@@ -201,22 +201,22 @@ module:
     - path: github.com/hugomods/icons/vendors/bootstrap
     - path: github.com/hugomods/code-block-panel
     - path: github.com/hugomods/search
-#   - path: github.com/hugomods/icons/vendors/simple-icons
+  #   - path: github.com/hugomods/icons/vendors/simple-icons
   mounts:
-    - source: "assets"
-      target: "assets"
-    - source: "hugo_stats.json"
-      target: "assets/watching/hugo_stats.json"
+    - source: 'assets'
+      target: 'assets'
+    - source: 'hugo_stats.json'
+      target: 'assets/watching/hugo_stats.json'
 
 build:
   buildStats:
     enable: true
   cachebusters:
-  - source: assets/watching/hugo_stats\.json
-    target: styles\.css
-  - source: (postcss|tailwind)\.config\.js
-    target: css
-  - source: assets/.*\.(js|ts|jsx|tsx)
-    target: js
-  - source: assets/.*\.(.*)$
-    target: $1
+    - source: assets/watching/hugo_stats\.json
+      target: styles\.css
+    - source: (postcss|tailwind)\.config\.js
+      target: css
+    - source: assets/.*\.(js|ts|jsx|tsx)
+      target: js
+    - source: assets/.*\.(.*)$
+      target: $1
