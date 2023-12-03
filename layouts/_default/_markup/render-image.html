@@ -1,12 +1,14 @@
 {{- $image := resources.Get (printf "%s" (.Destination | safeURL)) -}}
 {{- if and $image (ne (path.Ext .Destination) ".svg") -}}
-    {{- if (default true .Page.Site.Params.imageProcessing.content.enabled) -}}
-    {{- end -}}
-        {{ $imageResized := $image.Resize "660x webp" }}
-        <picture>
-          <source srcset="{{ $imageResized.RelPermalink }}" loading="lazy" type="image/webp" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
-          <img src="{{ $image.RelPermalink }}" loading="lazy" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
-        </picture>
+{{- if (default true .Page.Site.Params.imageProcessing.content.enabled) -}}
+{{- end -}}
+{{ $imageResized := $image.Resize "660x webp" }}
+<picture>
+  <source srcset="{{ $imageResized.RelPermalink }}" loading="lazy" type="image/webp" alt="{{ .Text }}" {{ with .Title}}
+    title="{{ . }}" {{ end }} />
+  <img src="{{ $image.RelPermalink }}" loading="lazy" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+</picture>
 {{- else -}}
-<img src="{{ .Destination | relURL | safeURL }}!/fw/660" loading="lazy" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+<img src="{{ .Destination | relURL | safeURL }}" loading="lazy" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{
+  end }} />
 {{- end -}}
