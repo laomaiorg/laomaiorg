@@ -75,7 +75,7 @@ params:
     lastUpdated: 2006-01-02
 
   comments:
-    enabled: true
+    enabled: false
     provider: twikoo
 
     twikoo:
