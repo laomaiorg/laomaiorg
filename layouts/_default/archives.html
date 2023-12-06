@@ -74,7 +74,8 @@
 <!-- {{ $js := resources.Get "js/archivesTK.js" }}
 {{ $js = slice $js | resources.Concat "js/tk.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script> -->
-<script>
+
+<!-- <script>
     function updateCommentsCount() {
         const liElements = document.querySelectorAll('.archive-entry')
         const urls = []
@@ -106,7 +107,8 @@
 
     // 页面加载完成后调用更新评论数量函数
     window.addEventListener('load', updateCommentsCount)
-</script>
+</script> -->
+
 <script>
     // JavaScript 示例代码
 
