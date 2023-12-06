@@ -3,14 +3,14 @@
   function updateCommentsCount() {
     const liElements = document.querySelectorAll('.latestPosts li')
     const urls = []
-  
+
     liElements.forEach(function (li) {
       const relPermalink = li.getAttribute('data-relpermalink')
       urls.push(relPermalink)
     })
 
     twikoo.getCommentsCount({
-      envId: 'https://twikoo.qylao.com',
+      envId: 'https://twikoo.iamlm.com',
       urls: urls,
       includeReply: false, // 评论数是否包括回复，默认：false
     })
@@ -33,7 +33,7 @@
 
   function updateComments() {
     twikoo.getRecentComments({
-      envId: 'https://twikoo.qylao.com', // 环境 ID
+      envId: 'https://twikoo.iamlm.com', // 环境 ID
       pageSize: 5, // 获取多少条，默认：10，最大：100
       includeReply: false // 是否包括最新回复，默认：false
     }).then(function (res) {
@@ -47,7 +47,7 @@
         commentLink.className = 'flex items-center gap-4 px-4 py-3 rounded opacity-80 hover:opacity-100 hover:bg-stone-200 dark:hover:bg-stone-800';
         // 将 API 返回的 URL 与 ID 进行拼接来获取想要的值
         commentLink.href = comment.url + '#' + comment.id;
-      
+
         const commentImage = document.createElement('div');
         commentImage.className = 'flex items-center self-center shrink-0';
         const image = document.createElement('img');
@@ -55,7 +55,7 @@
         image.alt = 'Avatar';
         image.className = 'w-10 rounded';
         commentImage.appendChild(image);
-      
+
         const commentContent = document.createElement('div');
         commentContent.className = 'flex flex-col gap-0 min-h-[2rem] items-start justify-center w-full min-w-0';
         const commentMeta = document.createElement('div')
@@ -76,7 +76,7 @@
 
         commentContent.appendChild(commentMeta);
         commentContent.appendChild(commentText);
-      
+
         commentLink.appendChild(commentImage);
         commentLink.appendChild(commentContent);
 

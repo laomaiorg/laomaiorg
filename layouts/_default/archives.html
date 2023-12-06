@@ -5,6 +5,7 @@
         list-style-type: none;
         cursor: pointer;
     }
+
     .post-len {
         margin-bottom: 3rem;
         padding: 1rem 0;
@@ -13,42 +14,47 @@
     }
 
     /* 自定义的类名和样式 */
-    .my-details-disclosure > .my-archive-posts {
-        display: none; /* 初始状态下隐藏文章列表 */
+    .my-details-disclosure>.my-archive-posts {
+        display: none;
+        /* 初始状态下隐藏文章列表 */
     }
 
-    .my-details-disclosure[open] > .my-archive-posts {
-        display: block; /* 当前展开的年份对应的文章列表显示 */
+    .my-details-disclosure[open]>.my-archive-posts {
+        display: block;
+        /* 当前展开的年份对应的文章列表显示 */
     }
 </style>
 
 <div class="my-20 m-auto">
-        <h1 class="hidden">{{ .Title }}</h1>
+    <h1 class="hidden">{{ .Title }}</h1>
     <div class="post-len">至今已记录了 {{ len (where .Site.RegularPages "Type" "in" "post") }} 份笔记。</div>
     <div class="archives">
         <div class="listing">
-            {{ $pages := where .Site.RegularPages "Type" "in" "post" }} 
-            {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }} 
-            {{ $filtered := ($pages | intersect $notHidden) }} 
-            {{ $currentIndex := 0 }} 
-            {{ range $filtered.GroupByDate "2006" }} 
+            {{ $pages := where .Site.RegularPages "Type" "in" "post" }}
+            {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+            {{ $filtered := ($pages | intersect $notHidden) }}
+            {{ $currentIndex := 0 }}
+            {{ range $filtered.GroupByDate "2006" }}
             {{ if ne .Key "0001" }}
 
             <my-details class="my-details-disclosure" {{ if eq $currentIndex 0 }}open{{ end }}>
                 <summary class="my-summary">
                     <h3 class="archive-year-header text-3xl font-Hubot font-bold pt-6 pb-1">
                         {{- replace .Key "0001" "" }}
-                        <sup class="-left-1 text-sm text-stone-400 -top-4 font-MonteCarlo font-extralight">{{ len .Pages }}</sup>
+                        <sup
+                            class="-left-1 text-sm text-stone-400 -top-4 font-MonteCarlo font-extralight">{{ len .Pages }}</sup>
                     </h3>
                 </summary>
                 <div class="my-archive-posts">
                     <!-- 这里放置每年的文章列表 -->
                     <div class="archive-posts grid-rows-1">
-                        {{- range .Pages }} 
+                        {{- range .Pages }}
                         {{- if eq .Kind "page" }}
                         <div class="archive-entry" data-relpermalink="{{ .RelPermalink }}">
-                            <a class="flex justify-between align-middle py-4 px-2 rounded border-l-4 border-transparent hover:bg-stone-200 hover:border-emerald-500 dark:hover:bg-stone-800" href="{{ .Permalink }}">
-                                <span class="title">{{ .Title }}<sup id="{{ .RelPermalink }}" class="left-1 text-stone-400 font-MonteCarlo font-extralight"></sup></span>
+                            <a class="flex justify-between align-middle py-4 px-2 rounded border-l-4 border-transparent hover:bg-stone-200 hover:border-emerald-500 dark:hover:bg-stone-800"
+                                href="{{ .Permalink }}">
+                                <span class="title">{{ .Title }}<sup id="{{ .RelPermalink }}"
+                                        class="left-1 text-stone-400 font-MonteCarlo font-extralight"></sup></span>
                                 <time class="date min-w-[3rem]">{{ .Date.Format "01-02" }}</time>
                             </a>
                         </div>
@@ -72,30 +78,30 @@
     function updateCommentsCount() {
         const liElements = document.querySelectorAll('.archive-entry')
         const urls = []
-        
+
         liElements.forEach(function (li) {
-        const relPermalink = li.getAttribute('data-relpermalink')
-        urls.push(relPermalink)
+            const relPermalink = li.getAttribute('data-relpermalink')
+            urls.push(relPermalink)
         })
 
         twikoo.getCommentsCount({
-        envId: 'https://twikoo.qylao.com',
-        urls: urls,
-        includeReply: false, // 评论数是否包括回复，默认：false
+            envId: 'https://twikoo.iamlm.com',
+            urls: urls,
+            includeReply: false, // 评论数是否包括回复，默认：false
         })
-        .then(function (responses) {
-            responses.forEach(function (res) {
-            const countElement = document.getElementById(res.url)
-            if (countElement && typeof res.count !== 'undefined') {
-                countElement.textContent = res.count
-            } else {
-                console.error('Invalid response:', res)
-            }
+            .then(function (responses) {
+                responses.forEach(function (res) {
+                    const countElement = document.getElementById(res.url)
+                    if (countElement && typeof res.count !== 'undefined') {
+                        countElement.textContent = res.count
+                    } else {
+                        console.error('Invalid response:', res)
+                    }
+                })
             })
-        })
-        .catch(function (err) {
-            console.error(err)
-        })
+            .catch(function (err) {
+                console.error(err)
+            })
     }
 
     // 页面加载完成后调用更新评论数量函数

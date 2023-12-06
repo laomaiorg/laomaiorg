@@ -1,17 +1,18 @@
 function updateCommentsCount() {
   const liElements = document.querySelectorAll('.latestPosts li')
   const urls = []
-  
+
   liElements.forEach(function (li) {
     const relPermalink = li.getAttribute('data-relpermalink')
     urls.push(relPermalink)
   })
 
-  twikoo.getCommentsCount({
-    envId: 'https://twikoo.qylao.com',
-    urls: urls,
-    includeReply: false, // 评论数是否包括回复，默认：false
-  })
+  twikoo
+    .getCommentsCount({
+      envId: 'https://twikoo.iamlm.com',
+      urls: urls,
+      includeReply: false, // 评论数是否包括回复，默认：false
+    })
     .then(function (responses) {
       responses.forEach(function (res) {
         const countElement = document.getElementById(res.url)
