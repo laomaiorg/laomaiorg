@@ -6,7 +6,7 @@ name: laomai.org-v2
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,6 +27,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.BLOG_DEPLOY_KEY }}
+          log-public-key: false
 
       - name: Hugo setup
         # You may pin to the exact commit or the version.
@@ -58,16 +59,16 @@ jobs:
       # - name: Search
       #   run: |
       #     npx pagefind --source "public"
-          
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-      
+
       - name: Scan public keys
         run: |
           ssh-keyscan ${{ secrets.BLOG_DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: Copy
         run: |
-          rsync -av --delete public root@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/nginxproxymanager/data/laomai.org
+          rsync -av --delete public root@${{ secrets.BLOG_DEPLOY_HOST }}:/root/docker/laomaiorg
