@@ -7,3 +7,7 @@
 💞️ 正在努力减肥……
 
 👀 想像一些旅行 UP 主一样，骑着摩托车看看这个世界。
+
+## 文章列表
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
